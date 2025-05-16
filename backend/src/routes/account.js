@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dbFunctions = require('../db/dbFunctions');
+const { authMiddleware } = require("../utils/index");
 
 // Get account details
 router.get('/',authMiddleware, async (req, res) => {

@@ -1,10 +1,25 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    /*#000*/
+    --color-black: #000;
+    /*#fff*/
+    --color-white: #fff;
+    /*#182d55*/
+    --color-primary: #182d55;
+    /*#6edffe*/
+    --color-secondary: #6edffe;
+    /*#6ddffe*/
+    --color-accent: #6ddffe;
+
+    --primary-background: var();
+  }
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-} 
+}
