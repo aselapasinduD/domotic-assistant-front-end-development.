@@ -20,6 +20,7 @@
     --main-layout-border-color: var(--color-white);
 
     --side-navbar-default-icon-color: var(--color-white);
+    --side-navbar-selected-btn-background: var(--color-secondary);
 
     --input-default-border-color: var(--color-white);
     --input-focused-border-color: var(--color-secondary);
