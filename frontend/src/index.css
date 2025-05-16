@@ -19,7 +19,8 @@
 
     --main-layout-border-color: var(--color-white);
 
-    --side-navbar-default-icon-color: var(--color-white);
+    --side-navbar-background: var(--color-primary);
+    --side-navbar-default-btn-icon-color: var(--color-white);
     --side-navbar-selected-btn-background: var(--color-secondary);
 
     --input-default-border-color: var(--color-white);
