@@ -14,7 +14,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 const InputSearch: React.FC<InputProps> = ({className, ...props}) => {
     return(
         <span className="w-full max-w-80 flex items-center relative [&>input:focus-visible>button]:text-[var(--input-focused-border-color)]">
-            <input className={`peer w-full h-12 font-tiny border border-[var(--input-default-border-color)] focus-visible:border-[var(--input-focused-border-color)] rounded-lg px-6 ${className || ""}`} placeholder="Search..." {...props} />
+            <input className={`peer w-full h-11 font-tiny border border-[var(--input-default-border-color)] focus-visible:border-[var(--input-focused-border-color)] rounded-lg px-6 ${className || ""}`} placeholder="Search..." {...props} />
             <button type="button" title="Search" className="absolute right-2 p-2 cursor-pointer text-[var(--input-default-border-color)] peer-focus-visible:text-[var(--input-focused-border-color)]"><SearchIcon size={24} /></button>
         </span>
     )
