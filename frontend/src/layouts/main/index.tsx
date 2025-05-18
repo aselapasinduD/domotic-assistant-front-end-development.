@@ -32,7 +32,9 @@ function Layout({children, setWhichInterface}: PropType){
     if (!isAuthenticated && isLoading) {
         return <Login />;
     }
-
+    if (!isLoading){
+        return <main className="min-h-screen bg-[var(--primary-background)]"></main>
+    }
     return(
         <main className="min-h-screen bg-[var(--primary-background)]">
             <Header />
