@@ -31,11 +31,15 @@ const listOfStays: Stays[] = [
 
 const Stays = () => {
     return(
-        <div>
+        <div className="flex flex-col">
             <h4 className="mb-4 text-md font-medium">STAYS</h4>
-            {listOfStays.map((stay) => 
-                <ExpandableInfoTile title={stay.title} details={stay.details} />
-            )}
+            <div className="flex-1 flex flex-col overflow-hidden">
+                <div className="flex flex-col">
+                    {listOfStays.map((stay) => 
+                        <ExpandableInfoTile title={stay.title} details={stay.details} />
+                    )}
+                </div>
+            </div>
         </div>
     )
 }

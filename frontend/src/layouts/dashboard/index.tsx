@@ -12,7 +12,7 @@ interface PropType{
  */
 function DashboardLayout({children}: PropType){
     return(
-        <div className="dashboard-interface h-full gap-10 pl-8">
+        <div className="dashboard-interface relative h-full gap-4 sm:gap-10 pl-4 sm:pl-8 overflow-hidden">
             {children}
         </div>
     )

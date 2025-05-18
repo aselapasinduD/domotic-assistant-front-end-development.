@@ -10,6 +10,13 @@ interface ToogleButtonProps{
     onToggleButtonClick: () => void;
 }
 
+/**
+ * 
+ * @param isToggle - Boolean value to check whether the button is toggle or not.
+ * @param onToggleButtonClick - Callback function for Toggle the button.
+ * @returns JSX element
+ * @since 1.0.0
+ */
 const ToggleButton: React.FC<ToogleButtonProps> = ({isToggle, onToggleButtonClick}) => {
 
     const style: CustomStyle = {
