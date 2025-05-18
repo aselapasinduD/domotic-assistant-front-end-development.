@@ -9,7 +9,14 @@ router.get('/',authMiddleware, async (req, res) => {
     // TODO: Implement get account logic
     //get user details from request that was added by authMiddleware
     //return user details
-    res.status(501).json({ message: 'Get account route not implemented yet' });
+    
+    const user = req.user;
+    if (!user) {
+      return res.status(404).json({ message: 'User not found', error: true});
+    }
+
+    res.status(200).json({ message: 'Account details fetched successfully', user , error: false });
+    // res.status(501).json({ message: 'Get account route not implemented yet' });
   } catch (error) {
     res.status(500).json({ message: 'Error fetching account', error: error.message });
   }
