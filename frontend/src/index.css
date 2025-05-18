@@ -9,11 +9,11 @@
     /*#182d55*/
     --color-primary: #182d55;
     /*#6edffe*/
-    --color-secondary: #6edffe;
+    --color-secondary: #26395e;
     /*#6ddffe*/
-    --color-accent: #6ddffe;
+    --color-accent: #6edffe;
 
-    --primary-background: var();
+    --primary-background: var(--color-primary);
 
     --header-text-color: var(--color-white);
 
@@ -21,10 +21,27 @@
 
     --side-navbar-background: var(--color-primary);
     --side-navbar-default-btn-icon-color: var(--color-white);
-    --side-navbar-selected-btn-background: var(--color-secondary);
+    --side-navbar-selected-btn-background: var(--color-accent);
 
     --input-default-border-color: var(--color-white);
-    --input-focused-border-color: var(--color-secondary);
+    --input-focused-border-color: var(--color-accent);
+
+    --dashboard-background: var(--color-secondary);
+
+    --device-tile-icon-text-color: var(--color-white);
+    --device-tile-border-color: var(--color-white);
+    --device-tile-background: var(--color-secondary);
+    --device-tile-selected-background: var(--color-accent);
+
+    --sub-device-tile-selected-icon-text: var(--color-accent);
+    --sub-device-tile-selected-border: var(--color-accent);
+
+    --thermostat-default-text-color: var(--color-white);
+
+    --toggle-btn-border: #8a95a8;
+    --toggle-btn-background: #3c4b6f;
+    --toggle-btn-inactive-top: #8a95a8;
+    --toggle-btn-active-top: var(--color-accent);
   }
 
   * {
@@ -32,12 +49,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* outline: red dashed 1px; */
     outline: none;
   }
 
   main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
       "header header"
