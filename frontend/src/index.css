@@ -12,12 +12,13 @@
     --color-secondary: #26395e;
     /*#6ddffe*/
     --color-accent: #6edffe;
+    --color-gray: #c7c7c777;
 
     --primary-background: var(--color-primary);
 
     --header-text-color: var(--color-white);
 
-    --main-layout-border-color: var(--color-white);
+    --main-layout-border-color: var(--color-gray);
 
     --side-navbar-background: var(--color-primary);
     --side-navbar-default-btn-icon-color: var(--color-white);
@@ -37,6 +38,7 @@
     --sub-device-tile-selected-border: var(--color-accent);
 
     --thermostat-default-text-color: var(--color-white);
+    --thermostat-btn-hover-color: var(--color-accent);
 
     --toggle-btn-border: #8a95a8;
     --toggle-btn-background: #3c4b6f;
@@ -60,5 +62,25 @@
     grid-template-areas:
       "header header"
       "side-navbar interface-container";
+  }
+
+  /* width */
+  ::-webkit-scrollbar-track {
+    background-color: #00000000;
+    border-radius: 99px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #00000000;
+    border-radius: 99px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 99px;
   }
 }

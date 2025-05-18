@@ -1,3 +1,5 @@
+type ListOfInterfaces = "dashboard" | "lock" | "settings";
+
 interface DeviceStruc {
     id: string;
     name: string;
@@ -17,4 +19,4 @@ interface Response{
     token?: string
 }
 
-export type {DeviceStruc, SubDevicesStruc, Response}
+export type {DeviceStruc, SubDevicesStruc, Response, ListOfInterfaces}

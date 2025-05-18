@@ -1,12 +1,19 @@
 import React from "react";
 
+import type { ListOfInterfaces } from "../../@common/types";
+
 import toCascadeCase from "../../@common/toCascadeCase";
 
 interface ButtonProps {
     icon: React.ReactNode
-    btnId: string;
-    isChecked: string;
-    setIsChecked: React.Dispatch<React.SetStateAction<string>>;
+    btnId: ListOfInterfaces;
+    isChecked: ListOfInterfaces;
+    setIsChecked: React.Dispatch<React.SetStateAction<ListOfInterfaces>>;
+}
+
+interface CustomStyle extends React.CSSProperties{
+    "--icon-color": string
+    "--btn-background": string
 }
 
 /**
@@ -17,11 +24,16 @@ interface ButtonProps {
  * @param isChecked - Current Selected side bar button ID
  * @param setIsChecked - function to set the current selected side bar button ID
  * @returns JSX element
+ * @since 1.0.0
  */
 const SideNavbarButton: React.FC<ButtonProps> = ({btnId, icon, isChecked, setIsChecked}) => {
     const _isChecked = isChecked === btnId
+    const style: CustomStyle = {
+        "--icon-color": _isChecked ? "var(--side-navbar-background)" : "var(--side-navbar-default-btn-icon-color)",
+        "--btn-background": _isChecked ? "var(--side-navbar-selected-btn-background)" : ""
+    }
     return(
-        <button type="button" title={toCascadeCase(btnId)} className={`p-2 w-fit h-fit rounded-lg [&>svg]:text-[var(${_isChecked ? "--side-navbar-background" : "--side-navbar-default-btn-icon-color" })] ${_isChecked ? "bg-[var(--side-navbar-selected-btn-background)]" : ""}`} onClick={() => setIsChecked(btnId)}>
+        <button type="button" title={toCascadeCase(btnId)} className="p-2 w-fit h-fit rounded-lg [&>svg]:text-[var(--icon-color)] bg-[var(--btn-background)] cursor-pointer" style={style} onClick={() => setIsChecked(btnId)}>
             {icon}
         </button>
     )
