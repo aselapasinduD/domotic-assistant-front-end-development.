@@ -14,7 +14,7 @@ const Header = () => {
         <div className="w-full h-18 [&>div]:h-18 flex [&>div]:flex [&>div]:items-center border-b border-[var(--main-layout-border-color)] text-[var(--header-text-color)]" style={{gridArea: "header"}}>
             <div className="w-18 border-r border-[var(--main-layout-border-color)] justify-center">
                 <div className="text-3xl">
-                    <span className="font-semibold text-[var(--color-secondary)]">G</span>
+                    <span className="font-semibold text-[var(--color-accent)]">G</span>
                     <span>S</span>
                 </div>
             </div>
