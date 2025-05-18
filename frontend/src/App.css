@@ -1,0 +1,5 @@
+.dashboard-interface {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "controls aside";
+}
