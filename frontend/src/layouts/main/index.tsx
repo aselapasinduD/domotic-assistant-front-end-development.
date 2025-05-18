@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import UserModel from "../../models/userModel";
 
 import type { ListOfInterfaces } from "../../@common/types";
 
 import Header from "../../components/widgets/header";
 import SideNavbar from "../../components/widgets/sideNavbar";
+
+import Login from "../../pages/login";
 
 interface PropType{
     children: React.ReactNode;
@@ -11,16 +15,26 @@ interface PropType{
 }
 
 /**
- * Main layout of the SPA
+ * Main Layout of the SPA
  * 
- * @param children - Interfaces of the SPA
- * @param setWhichInterface - Callback function for switch between defferent interfaces
+ * @param children - Interface of each tabs
  * @returns JSX element
- * @since 1.0.0
  */
 function Layout({children, setWhichInterface}: PropType){
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+
+    useEffect(() => {
+        setIsAuthenticated(UserModel.checkUserCredential())
+        setIsLoading(true)
+    }, [])
+
+    if (!isAuthenticated && isLoading) {
+        return <Login />;
+    }
+
     return(
-        <main className="min-h-screen bg-[var(--color-primary)]">
+        <main className="min-h-screen bg-[var(--primary-background)]">
             <Header />
             <SideNavbar setWhichInterface={setWhichInterface} />
             <div style={{gridArea: "interface-container"}}>
