@@ -1,12 +1,14 @@
 import React from "react";
 
+import type { ListOfInterfaces } from "../../@common/types";
+
 import toCascadeCase from "../../@common/toCascadeCase";
 
 interface ButtonProps {
     icon: React.ReactNode
-    btnId: string;
-    isChecked: string;
-    setIsChecked: React.Dispatch<React.SetStateAction<string>>;
+    btnId: ListOfInterfaces;
+    isChecked: ListOfInterfaces;
+    setIsChecked: React.Dispatch<React.SetStateAction<ListOfInterfaces>>;
 }
 
 interface CustomStyle extends React.CSSProperties{

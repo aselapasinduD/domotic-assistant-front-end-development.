@@ -2,9 +2,10 @@ import React from "react";
 
 /**
  * SVG Icons for the SPA
+ * 
  * @since 1.0.0
  */
-const default_icon_size = 30
+const default_icon_size = 36
 
 interface IconProps {
   size?: number;

@@ -2,6 +2,13 @@
 
 A full-stack application demonstrating authentication, protected routes, and modern React UI components built with `Express.js` backend and `React + TypeScript` frontend.
 
+### Desktop View:
+![Desktop View](images/desktop.png)
+### Tablet View:
+![Tablet View](images/tablet.png)
+### Mobile View:
+![Mobile View](images/mobile.png)
+
 ## Project Structure
 Only the `src` file structure is shown below.
 ```
