@@ -1,0 +1,297 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Domotic Assistant APIs",
+        "description": "This is the Domotic Assistant APIs for demonstration purposes.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api",
+            "description": "Development server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "User Auth",
+            "description": "APIs related to user authentication"
+        }
+    ],
+    "paths": {
+        "/login": {
+            "post": {
+                "summary": "User Login",
+                "tags": ["User Auth"],
+                "requestBody": {
+                    "description": "User Login Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "required": ["email", "password"],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "description": "Enter user registerd email"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "description": "Enter the user password"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "userCredential": {
+                                    "summary": "Test User",
+                                    "description": "Test user loging details",
+                                    "value": {
+                                        "email": "test@example.com",
+                                        "password": "hashedPassword123"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login successful",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Final result"
+                                        },
+                                        "error": {
+                                            "type": "boolean",
+                                            "description": "To check it's a error or not."
+                                        },
+                                        "token":{
+                                            "type": "string",
+                                            "description": "Generate JWT token"
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Response": {
+                                        "value": {
+                                            "message": "Login successful",
+                                            "error": false,
+                                            "token": "Generate JWT token"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid email format",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                            "message": {
+                                            "type": "string",
+                                            "description": "Final result"
+                                        },
+                                        "error": {
+                                            "type": "boolean",
+                                            "description": "To check it's a error or not."
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Response": {
+                                        "value": {
+                                            "message": "Invalid email format",
+                                            "error": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Final result"
+                                        },
+                                        "error": {
+                                            "type": "boolean",
+                                            "description": "To check it's a error or not."
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Response": {
+                                        "value": {
+                                            "message": "User not found",
+                                            "error": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/account": {
+            "get":{
+                "summary": "User account authentication using JWT.",
+                "tags": ["User Auth"],
+                "parameters": [
+                    {
+                        "name": "auth-token",
+                        "in": "header",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "Valid JWT token"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Account details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Final result message."
+                                        },
+                                        "error": {
+                                            "type": "boolean",
+                                            "description": "To check it's a error or not."
+                                        },
+                                        "user": {
+                                            "id": {
+                                                "type": "integer",
+                                                "description": "User ID."
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "format": "email",
+                                                "description": "User email address."
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "description": "User Name."
+                                            },
+                                            "iat": {
+                                                "type": "integer",
+                                                "description": "Token generate at."
+                                            },
+                                            "exp": {
+                                                "type": "integer",
+                                                "description": "Token expire at."
+                                            }
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Response": {
+                                        "value": {
+                                            "message": "Account details fetched successfully",
+                                            "user": {
+                                                "id": 1,
+                                                "email": "test@example.com",
+                                                "name": "Test User",
+                                                "iat": 1749698954,
+                                                "exp": 1749699014
+                                            },
+                                            "error": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized – Invalid or missing auth token.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Final result"
+                                        },
+                                        "error": {
+                                            "type": "boolean",
+                                            "description": "To check it's a error or not."
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Invalid Token": {
+                                        "value": {
+                                            "message": "Token is not valid",
+                                            "error": true
+                                        }
+                                    },
+                                    "Missing Token": {
+                                        "value": {
+                                            "message": "No token provided",
+                                            "error": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User account error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Final result"
+                                        },
+                                        "error": {
+                                            "type": "boolean",
+                                            "description": "To check it's a error or not."
+                                        }
+                                    }
+                                },
+                                "examples": {
+                                    "Missing User": {
+                                        "value": {
+                                            "message": "User not found",
+                                            "error": true
+                                        }
+                                    },
+                                    "User Fetching Error": {
+                                        "value": {
+                                            "message": "Error message",
+                                            "error": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

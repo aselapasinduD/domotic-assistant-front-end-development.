@@ -18,7 +18,7 @@ router.get('/',authMiddleware, async (req, res) => {
     res.status(200).json({ message: 'Account details fetched successfully', user , error: false });
     // res.status(501).json({ message: 'Get account route not implemented yet' });
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching account', error: error.message });
+    res.status(500).json({ message: error.message, error: true});
   }
 });
 
