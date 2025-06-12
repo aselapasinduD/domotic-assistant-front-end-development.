@@ -44,6 +44,12 @@
     --toggle-btn-background: #3c4b6f;
     --toggle-btn-inactive-top: #8a95a8;
     --toggle-btn-active-top: var(--color-accent);
+
+    --add-device-button: var(--color-accent);
+
+    --color: rgb(59, 213, 255);
+    --glow-effect-color: 59, 213, 254;
+    --glow-effect-background: var(--color-primary);
   }
 
   * {
@@ -62,6 +68,22 @@
     grid-template-areas:
       "header header"
       "side-navbar interface-container";
+  }
+
+  .glow {
+    background-color: var(--glowing-effect-background);
+    box-shadow: 0 0 24px 4px rgba(var(--glow-effect-color), 0.6);
+    animation: pulseGlow 2s infinite alternate;
+  }
+
+  @keyframes pulseGlow {
+    from {
+      box-shadow: 0 0 24px 4px rgba(var(--glow-effect-color), 0.9);
+    }
+
+    to {
+      box-shadow: 0 0 32px 10px rgba(var(--glow-effect-color), 0.2);
+    }
   }
 
   /* width */

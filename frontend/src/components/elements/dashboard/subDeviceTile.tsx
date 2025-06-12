@@ -43,7 +43,7 @@ const SubDeviceTile: React.FC<SubDeviceTileProps> = ({ device, isSelected, setSe
     }
 
     return(
-        <div className="flex flex-col items-center gap-2 justify-center min-w-[240px] max-h-[300px] [&_*]:text-[var(--icon-color-text)] border-(length:--border-size) border-[var(--border-color)] rounded-3xl px-5 py-6 cursor-pointer select-none shadow-cyan-500/50" style={style} onClick={handleSelected}>
+        <div className="flex flex-col items-center gap-2 justify-center min-w-[240px] max-h-[300px] [&_*]:text-[var(--icon-color-text)] ring-(length:--border-size) ring-[var(--border-color)] rounded-3xl px-5 py-6 cursor-pointer select-none shadow-cyan-500/50" style={style} onClick={handleSelected}>
             <span>{icon}</span>
             <p className="h-fit text-lg">{name}</p>
             <p className="font-thin text-sm">{status}</p>

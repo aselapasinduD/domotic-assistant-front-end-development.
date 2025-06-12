@@ -17,7 +17,7 @@ interface ToogleButtonProps{
  * @returns JSX element
  * @since 1.0.0
  */
-const ToggleButton: React.FC<ToogleButtonProps> = ({isToggle, onToggleButtonClick}) => {
+const Button: React.FC<ToogleButtonProps> = ({isToggle, onToggleButtonClick}) => {
 
     const style: CustomStyle = {
         "--toggle-btn-translate-x": isToggle? "38px" : "0",
@@ -31,4 +31,4 @@ const ToggleButton: React.FC<ToogleButtonProps> = ({isToggle, onToggleButtonClic
     )
 }
 
-export default ToggleButton;
+export default Button;

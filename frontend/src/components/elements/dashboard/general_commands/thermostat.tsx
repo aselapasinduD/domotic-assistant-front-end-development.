@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import ToggleButton from "../../toggleButton";
+import { ToggleButton } from "../../buttons";
 
 const Thermostat = () => {
     const [isToggle, setToggle] = useState<boolean>(false)
