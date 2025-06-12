@@ -1,5 +1,3 @@
-import React from "react";
-
 import InputSearch from "../elements/inputSearch";
 import _defaultProfilePicture from "../../assets/images/profile-picture.jpg";
 

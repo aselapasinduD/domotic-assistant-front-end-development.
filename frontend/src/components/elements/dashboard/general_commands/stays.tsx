@@ -1,4 +1,3 @@
-import React from "react";
 import ExpandableInfoTile from "../../expandableInfoTile";
 
 interface Stays{

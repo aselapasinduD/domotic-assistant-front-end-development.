@@ -1,4 +1,3 @@
-import React from "react";
 import Thermostat from "../../elements/dashboard/general_commands/thermostat";
 import Energy from "../../elements/dashboard/general_commands/energy";
 import Stays from "../../elements/dashboard/general_commands/stays";
