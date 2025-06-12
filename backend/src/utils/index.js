@@ -22,7 +22,7 @@ authMiddleware = (req, res, next) => {
             return res.status(401).json({ error: true, message: 'Token is not valid' });
         }
 
-        req.user = decoded;
+        req.user = Object.fromEntries(Object.entries(decoded).filter(([key, value]) => key != "password"));
         next();
     })
 }
