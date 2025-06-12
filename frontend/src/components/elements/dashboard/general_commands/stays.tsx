@@ -9,23 +9,23 @@ interface Stays{
 const listOfStays: Stays[] = [
     {
         title: "Kitchen",
-        details: "ashfioasufiowehjfkalshdfisadf asoufhio asugf aioshfiaosfyhio asugfaosit fasdf."
+        details: "Sed venenatis egestas blandit. Maecenas ac metus quis leo euismod congue sed at augue."
     },
        {
         title: "Living Room",
-        details: "ashfioasufiowehjfkalshdfisadf asoufhio asugf aioshfiaosfyhio asugfaosit fasdf."
+        details: "Aliquam placerat lectus eros, et posuere risus tempor eu."
     },
        {
         title: "Bedrooms",
-        details: "ashfioasufiowehjfkalshdfisadf asoufhio asugf aioshfiaosfyhio asugfaosit fasdf."
+        details: "Integer vitae consequat urna. Suspendisse aliquet pharetra lectus."
     },
        {
         title: "Bath",
-        details: "ashfioasufiowehjfkalshdfisadf asoufhio asugf aioshfiaosfyhio asugfaosit fasdf."
+        details: "Nam dignissim lacus et justo dictum fringilla. Suspendisse at feugiat erat."
     },
        {
         title: "Garden",
-        details: "ashfioasufiowehjfkalshdfisadf asoufhio asugf aioshfiaosfyhio asugfaosit fasdf."
+        details: "Praesent odio ipsum, accumsan nec faucibus vel, vulputate ut augue."
     },
 ]
 

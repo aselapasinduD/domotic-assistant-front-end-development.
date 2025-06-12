@@ -33,7 +33,7 @@ const SideNavbarButton: React.FC<ButtonProps> = ({btnId, icon, isChecked, setIsC
         "--btn-background": _isChecked ? "var(--side-navbar-selected-btn-background)" : ""
     }
     return(
-        <button type="button" title={toCascadeCase(btnId)} className="p-2 w-fit h-fit rounded-lg [&>svg]:text-[var(--icon-color)] bg-[var(--btn-background)] cursor-pointer" style={style} onClick={() => setIsChecked(btnId)}>
+        <button type="button" title={toCascadeCase(btnId)} className={`p-2 w-fit h-fit rounded-lg [&>svg]:text-[var(--icon-color)] bg-[var(--btn-background)] cursor-pointer ${_isChecked? "glow":""}`} style={style} onClick={() => setIsChecked(btnId)}>
             {icon}
         </button>
     )

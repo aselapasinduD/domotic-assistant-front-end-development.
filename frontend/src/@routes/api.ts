@@ -1,6 +1,6 @@
 import type { Response } from "../@common/types";
 
-const API_END_POINT = "http://localhost:5000/api"
+const API_END_POINT = "http://localhost:3000/api"
 
 interface LoginUser {
     email: string;

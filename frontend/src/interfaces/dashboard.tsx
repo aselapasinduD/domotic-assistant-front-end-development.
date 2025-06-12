@@ -4,6 +4,7 @@ import DashboardLayout from "../layouts/dashboard";
 import DeviceTile from "../components/elements/dashboard/deviceTile";
 import SubDeviceTile from "../components/elements/dashboard/subDeviceTile";
 import GeneralCommands from "../components/widgets/dashboard/generalCommands";
+import { AddDeviceButton } from "../components/elements/buttons";
 import type { DeviceStruc, SubDevicesStruc } from "../@common/types";
 
 import {
@@ -30,7 +31,7 @@ const listOfDevices: DeviceStruc[] = [
     },
     {
         id: 'device-3',
-        name: "CCTVIcon",
+        name: "CCTV",
         icon: <CCTVIcon />
     },
     {
@@ -113,8 +114,9 @@ function Dashboard(){
     return(
         <DashboardLayout>
             <div className="flex flex-col h-full" style={{gridArea: "controls"}}>
-                <div className="py-4 sm:py-10">
+                <div className="py-4 sm:py-10 flex gap-4">
                     <h1 className="text-2xl sm:text-4xl text-[var(--color-white)]">Domotic Assistant</h1>
+                    <AddDeviceButton />
                 </div>
                 <div className="flex-1 flex flex-col max-w-[76vw] sm:max-w-auto max-h-[100vh] sm:max-h-auto sm:flex-row gap-4 sm:gap-10 [&>div]:flex [&>div]:flex-col">
                     <div className="sm:w-fit 2xl:w-auto 2xl:flex-1 gap-1 sm:gap-4 sm:w-[25%] sm:h-[95%] bg-[var(--dashboard-background)] rounded-lg p-2 sm:p-5">
@@ -132,7 +134,7 @@ function Dashboard(){
                     <div className="flex-2 relative h-[50vh] sm:h-[95%] mb-4 sm:mb-auto border border-[var(--main-layout-border-color)] rounded-lg p-2 sm:p-6">
                         <h3 className="text-md font-normal text-center sm:text-left my-3 sm:my-auto sm:mb-6 text-[var(--color-white)]">HOUSE EXTERIOR DEVICES</h3>
                         <div className="flex-1 relative overflow-y-scroll">
-                            <div className="flex-1 flex flex-wrap gap-6 justify-center">
+                            <div className="flex-1 flex flex-wrap gap-6 justify-center m-1">
                                 {listOfSubDevices.map((subDevice) => {
                                     return(
                                         <SubDeviceTile key={subDevice.id} device={subDevice} isSelected={isSelectedSubDevice} setSelectedDevice={setSelectedSubDevice} />
