@@ -1,4 +1,4 @@
-# Take Home Assignment
+# Domotic Assistant Full Stack Development
 
 A full-stack application demonstrating authentication, protected routes, and modern React UI components built with `Express.js` backend and `React + TypeScript` frontend.
 
